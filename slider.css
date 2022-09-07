@@ -1,0 +1,68 @@
+:root{
+    --h: 600px;
+    --w: 500px;
+}
+
+.rh-slider-container{
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.rh-slider-wrapper{
+    height: var(--h);
+    width: var(--w);
+}
+
+.rh-slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: var(--h);
+    width: var(--w);
+}
+
+.rh-slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.rh-slide > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.5;
+    transition: all .5s;
+}
+
+.active-rh{
+    z-index: 9;
+}
+
+.active-rh img{
+    scale: 1;
+    transition: all .5s;
+}
+
+.previous-active-rh{
+    z-index: 9;
+    animation-name: prevAnim;
+    animation-duration: .5s;
+    transform-origin: bottom;
+    animation-fill-mode: forwards;
+}
+
+@keyframes prevAnim{
+    0%{
+        transform: scaleY(1);
+    }
+    100%{
+        transform: scaleY(0);
+    }
+}
